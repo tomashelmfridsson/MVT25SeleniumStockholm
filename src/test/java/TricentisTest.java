@@ -16,7 +16,18 @@ public class TricentisTest {
         WebElement element = driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[2]/ul[1]/li[1]/a"));
         String text = element.getText();
         assertEquals("BOOKS", text);
-        element.click();
+        driver.findElement(By.name("q")).sendKeys("Computing");
+        driver.findElement(By.className("search-box-button")).click();
+
         // driver.quit();
+        /**
+         * By.id
+         * By.name
+         * By.className
+         * By.tagName
+         * By.linkText
+         * By.partialLinkText
+         * By.xpath
+         */
     }
 }

@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,6 +13,10 @@ public class TricentisTest {
         // Open web browser
         driver.get("https://demowebshop.tricentis.com/");
         assertEquals("Demo Web Shop",driver.getTitle());
-        driver.quit();
+        WebElement element = driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[2]/ul[1]/li[1]/a"));
+        String text = element.getText();
+        assertEquals("BOOKS", text);
+        element.click();
+        // driver.quit();
     }
 }
